@@ -1,12 +1,13 @@
 package metadata
 
 import (
+	"encoding/json"
 	"errors"
+	"fmt"
+	"io/ioutil"
+	"net/http"
 	"time"
-    "fmt"
-    "io/ioutil"
-    "net/http"
-    "encoding/json"
+
 	"github.com/influxdata/telegraf"
 	"github.com/influxdata/telegraf/config"
 	"github.com/influxdata/telegraf/plugins/processors"
@@ -26,17 +27,17 @@ var m PortalMetadata
 
 type Response struct {
 
-	Id			  	int `json:"id"`
-	Cycle         	int `json:"cycle"`
-	DeviceConfig   	int `json:"device_config"`
-	GrindCycle		int `json:"grind_cycle"`
-	SteamCycle      int `json:"steam_cycle"`
+	Id			  	string `json:"id"`
+	Cycle         	string `json:"cycle"`
+	DeviceConfig   	string `json:"device_config"`
+	GrindCycle		string `json:"grind_cycle"`
+	SteamCycle      string `json:"steam_cycle"`
 	WasteType      	string `json:"waste_type"`
 	Type        	string `json:"type"`
 	StartTime       string `json:"start_time"`
 	EndTime      	string `json:"end_time"`
-	Completed     	bool `json:"completed"`
-	Successful    	bool `json:"successful"`
+	Completed     	string `json:"completed"`
+	Successful    	string `json:"successful"`
 }
 
 var meta_resp Response

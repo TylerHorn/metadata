@@ -7,7 +7,7 @@ import (
 	"time"
 
 	// TODO: import your plugins
-	_ "github.com/lawdt/metadata/plugins/processors/openstack/metadata"
+	_ "github.com/TylerHorn/metadata/plugins/processors/sterilis/metadata"
 
 	"github.com/influxdata/telegraf/plugins/common/shim"
 )
